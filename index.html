@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+    <script>
+        function validateForm() {
+            var username = document.forms["registrationForm"]["username"].value;
+            var password = document.forms["registrationForm"]["password"].value;
+
+            if (username === "" || password === "") {
+                alert("Both username and password are required.");
+                return false;
+            }
+            
+            if (password.length < 8) {
+                alert("Password must be at least 8 characters long.");
+                return false;
+            }
+            
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h2>Registration Form</h2>
+    <form name="registrationForm" action="process_registration.php" onsubmit="return validateForm()" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <input type="submit" value="Register">
+    </form>
+</body>
+</html>

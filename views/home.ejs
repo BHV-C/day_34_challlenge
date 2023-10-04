@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Profile</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      padding: 20px;
+    }
+    .container {
+      background-color: #fff;
+      border-radius: 5px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    h1 {
+      margin-top: 0;
+    }
+    .logout-button {
+      background-color: #ff6347;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+    .logout-button:hover {
+      background-color: #ff4433;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to your profile, <%= escapeHtml(username) %></h1>
+    <form action="/logout" method="GET">
+      <button class="logout-button" type="submit">Logout</button>
+    </form>
+  </div>
+</body>
+</html>
